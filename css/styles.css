@@ -206,6 +206,14 @@ h2 {
     color: #fff;
     transform: translateY(-5px);
 }
+
+#laser-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
 .projects-intro,
 .contact-intro {
     max-width: 900px;
@@ -470,14 +478,23 @@ h2 {
     }
 }
 
-/* === BARRE DE SCROLL PERSONNALISÉE (CYBERPUNK NÉON) === */
+
+.scroll-down {
+    position: absolute;
+    bottom: 50px;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
 ::-webkit-scrollbar {
-    width: 10px;                    /* Épaisseur */
+    width: 10px;                    
     height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.8); /* Fond sombre */
+    background: rgba(0, 0, 0, 0.8); 
     border-left: 1px solid rgba(0, 204, 255, 0.2);
     box-shadow: inset 0 0 6px rgba(0, 204, 255, 0.1);
 }
@@ -510,7 +527,7 @@ h2 {
     scrollbar-color: #00ccff rgba(0, 0, 0, 0.8);
 }
 
-/* Option : rendre la barre encore plus fine sur mobile */
+
 @media (max-width: 768px) {
     ::-webkit-scrollbar {
         width: 6px;

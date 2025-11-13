@@ -73,32 +73,6 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 const observer = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('visible', e.isIntersecting)), {threshold: 0.3});
 ['.projects-intro', '.contact-intro', '.project-box'].forEach(sel => document.querySelectorAll(sel).forEach(el => observer.observe(el)));
 
-
-let dashOffset = 0;
-const drawLaser = () => {
-    const boxes = document.querySelectorAll('.project-box');
-    if (boxes.length < 2) return;
-    const parentRect = laserCanvas.parentElement.getBoundingClientRect();
-    lctx.clearRect(0, 0, laserCanvas.width, laserCanvas.height);
-    lctx.shadowBlur = 20; lctx.shadowColor = '#00ccff';
-    lctx.strokeStyle = '#00ccff'; lctx.lineWidth = 3; lctx.globalAlpha = 0.6;
-    lctx.setLineDash([12, 8]); lctx.lineDashOffset = dashOffset--;
-    lctx.beginPath();
-    boxes.forEach((b, i) => {
-        const r = b.getBoundingClientRect();
-        const x = r.left - parentRect.left + r.width / 2;
-        const y = r.top - parentRect.top + r.height / 2;
-        i === 0 ? lctx.moveTo(x, y) : lctx.lineTo(x, y);
-    });
-    lctx.stroke();
-    lctx.globalAlpha = 0.9; lctx.lineWidth = 1.5; lctx.setLineDash([]); lctx.shadowBlur = 40; lctx.stroke();
-};
-const laserLoop = () => { drawLaser(); requestAnimationFrame(laserLoop); };
-laserLoop();
-window.addEventListener('scroll', drawLaser);
-window.addEventListener('resize', drawLaser);
-
-
 document.getElementById('emailBox').addEventListener('click', () => {
     navigator.clipboard.writeText('ugo.castagna19@gmail.com').then(() => {
         const el = document.getElementById('emailBox');
