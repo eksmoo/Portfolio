@@ -206,14 +206,6 @@ h2 {
     color: #fff;
     transform: translateY(-5px);
 }
-
-#laser-canvas {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-}
-
 .projects-intro,
 .contact-intro {
     max-width: 900px;
