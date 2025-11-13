@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugo Castagna • Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <canvas id="matrix-canvas"></canvas>
+
+    <nav>
+        <div class="logo">U/C</div>
+        <div class="nav-links">
+            <a href="#" class="active">ACCUEIL</a>
+            <a href="#apropos">À PROPOS</a>
+            <a href="#projets">PROJETS</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="accueil">
+        <h1 class="name-title">Ugo Castagna</h1>
+        <div class="formation"><strong>&lt; / Hello Friend &gt;</strong></div>
+    </section>
+
+    <section id="apropos">
+        <h2>whoami</h2>
+        <p>Passionné de cybersécurité, je suis étudiant à <strong class="highlight">Guardia CS</strong>.<br>
+           Mon objectif est <strong class="underline">simple</strong> : <strong>explorer</strong>, <strong>comprendre</strong> et <strong>exceller</strong> dans la cybersécurité.</p>
+        <p><strong class="underline green">Pourquoi donc ?</strong></p>
+        <p><strong>Pour garantir</strong> une protection et <strong>innover</strong> dans un monde numérique en constante évolution.</p>
+        <a href="UgoCastagna.pdf" class="btn-cv" download>TÉLÉCHARGER MON CV (PDF)</a>
+    </section>
+
+    <section id="projets">
+        <h2>PROJETS</h2>
+        <p class="projects-intro">
+            Projets réalisés chez <strong class="highlight">Guardia CS</strong> en <b>développement & cybersécurité</b>.
+        </p>
+        <canvas id="laser-canvas"></canvas>
+
+        <div class="project-box">
+            <div class="project-number">01</div>
+            <h3>Administration & supervision ISR</h3>
+            <p>Conception d’un réseau virtualisé avec pare-feu et services réseau.</p>
+            <div class="project-tags">
+                <span>VM</span><span>Linux</span><span>Stormshield</span>
+            </div>
+        </div>
+
+        <div class="project-box">
+            <div class="project-number">02</div>
+            <h3>Sécurisation ISR</h3>
+            <p>Infrastructure sécurisée avec segmentation, proxy et VLANs.</p>
+            <div class="project-tags">
+                <span>GNS3</span><span>Pfsense</span><span>Proxy</span><span>VLANs</span>
+            </div>
+        </div>
+
+        <div class="project-box coming-soon">
+            <div class="project-number">03</div>
+            <h3>À VENIR</h3>
+            <p>Développement sécurisé Web Full Stack<br><em>Stay connected !</em></p>
+            <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JS</span><span>PHP</span><span>MySQL</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>CONTACT</h2>
+        <p class="contact-intro">
+            Prêt à discuter cybersécurité, stage ou projet ?<br>Contactez-moi.
+        </p>
+
+        <div class="contact-buttons">
+            <a href="https://fr.linkedin.com/in/ugo-castagna-aa29a2386" target="_blank" class="btn-contact">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.029-3.056-1.856-3.056-1.859 0-2.144 1.459-2.144 2.963v5.697h-3v-11h2.878v1.509h.041c.4-.758 1.377-1.556 2.836-1.556 3.033 0 3.595 1.997 3.595 4.597v6.45z"/>
+                </svg>
+                LinkedIn
+                <span class="scan-line"></span>
+            </a>
+
+            <div class="email-box" id="emailBox">
+                <span class="email-text">ugo.castagna19@gmail.com</span>
+                <span class="copy-hint">Cliquez pour copier</span>
+                <span class="scan-line"></span>
+            </div>
+        </div>
+    </section>
+            <footer class="site-footer">
+            <p>© <span id="year"></span> Ugo Castagna — Tous droits réservés.</p>
+            <p class="neon-quote">Who decides the future ?</p>
+        </footer>
+    
+    <script src="js/js.js"></script>
+</body>
+</html>
