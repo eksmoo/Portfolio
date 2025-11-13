@@ -82,6 +82,3 @@ document.getElementById('emailBox').addEventListener('click', () => {
 });
 document.getElementById('year').textContent = new Date().getFullYear();
 
-if (window.innerWidth <= 768) {
-    document.body.classList.add('no-heavy-anim');
-}
