@@ -267,9 +267,13 @@ h1, h2, h3, h4 {
     padding-top: 20px;
 }
 
+.text-cobalt {
+    /* Le code hexadécimal #0047AB est une nuance classique de bleu cobalt */
+    color: #0047AB;
+}
 .full-width-bio p {
     margin-bottom: 25px; /* Plus d'espace entre les paragraphes */
-    font-size: 1.1rem; /* Texte légèrement plus grand */
+    font-size: 1.5rem; /* Texte légèrement plus grand */
     max-width: 100%; 
     color: #ccc;
 }
@@ -360,7 +364,7 @@ h1, h2, h3, h4 {
     font-weight: 700;
     padding: 2px 6px;
     border-radius: 3px;
-    margin-left: 10px;
+    margin-left: 50px;
 }
 
 /* --- Section Contact --- */
