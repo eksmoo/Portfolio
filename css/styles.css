@@ -452,6 +452,22 @@ footer p {
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 
+.neon-cobalt {
+    font-family: 'Electrolize', sans-serif; 
+    color: #99FFFF; 
+    font-size: 3.5rem; 
+    font-weight: 400;
+    letter-spacing: 5px; 
+    
+    text-shadow: 
+        /* Halo blanc/clair au centre */
+        0 0 5px rgba(255, 255, 255, 0.5),
+        /* Halo Cobalt principal, doux et subtil */
+        0 0 10px #0076CE,
+        0 0 20px #0076CE,
+        /* Halo extérieur très diffus */
+        0 0 30px rgba(0, 71, 171, 0.6);
+}
 
 /* -------------------------------------- */
 /* RESPONSIVE DESIGN (Mobile)             */
