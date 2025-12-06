@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugo Castagna — Cybersécurité</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
+</head>
+<body>
+
+    <nav class="header-nav">
+        <div class="logo">UGO CASTAGNA<span class="logo-dot">.</span></div>
+        <div class="nav-links">
+            <a href="#accueil" class="active">Accueil</a>
+            <a href="#apropos">Profil</a>
+            <a href="#projets">Projets</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </nav>
+
+    <main>
+        <section class="hero" id="accueil">
+            <h1 class="fade-in-up">Ugo Castagna</h1>
+            <h2 class="fade-in-up delay-1">Étudiant en Cybersécurité | Développement informatique option cybersécurité</h2>
+            <p class="fade-in-up delay-2">
+                Étudiant passionné à <strong class="highlight">Guardia CS</strong>, mon objectif est de maitriser des compétences globales en cybersécurité.
+            </p>
+            <a href="#projets" class="btn-primary fade-in-up delay-0.7">VOIR LES PROJETS</a>
+        </section>
+
+       <section id="apropos" class="content-section">
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h3>Mon Profil <span class="accent-line"></span></h3>
+            </div>
+            
+            <div class="profile-text full-width-bio">
+                <p>
+                    Mon parcours est centré sur la <b>maîtrise des fondations numériques</b> : de l'administration système à la sécurisation des architectures complexes. J'aborde la cybersécurité non pas comme une contrainte, mais comme une <b>opportunité d'innovation</b> pour découvrir et créer des systèmes robustes et fiables.
+                </p>
+                <p>
+                    Actuellement, j'ai pu développer des compétences pratiques dans plusieurs domaines clés de la cybersécurité, notamment :
+                    <ul>
+                        <li>ISR (Firewalling, Segmentation)</li>
+                        <li>Développement sécurisé (Protection contre les vulnérabilités OWASP)</li>
+                    </ul>
+                </p>
+                <p>
+                    Fort d'une curiosité constante pour les nouvelles menaces et les technologies de défense, je cherche un environnement où je pourrai appliquer ces connaissances pour renforcer la posture de sécurité d'une organisation. La rigueur et la volonté d'aller toujours plus loin sont au cœur de mon approche.
+                </p>
+                <a href="Ugo Castagna (3).pdf" class="btn-secondary" download>Télécharger mon CV <span class="material-symbols-outlined">download</span></a>
+            </div>
+        </section>
+
+        <section id="projets" class="content-section">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h3>Projets Récents <span class="accent-line"></span></h3>
+            </div>
+            
+            <div class="projects-list">
+                <article class="project-card fade-in">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">vpn_lock</span>
+                    </div>
+                    <h4>01. Administration & Supervision ISR</h4>
+                    <p class="description">
+                        Conception d'un réseau interne virtualisé sécurisé via un pare-feu (Stormshield),
+                        avec mise en place de services essentiels (DHCP, DNS) pour la communication interne.
+                    </p>
+                    <div class="tags">
+                        <span>VM</span><span>Linux</span><span>Firewalling</span><span>Stormshield</span>
+                    </div>
+                </article>
+
+                <article class="project-card fade-in delay-1">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">security</span>
+                    </div>
+                    <h4>02. Sécurisation ISR</h4>
+                    <p class="description">
+                        Mise en œuvre d'une infrastructure réseau complète et sécurisée,
+                        intégrant des mécanismes avancés de segmentation (VLANs) et de défense en profondeur (Pfsense, Proxy).
+                    </p>
+                    <div class="tags">
+                        <span>GNS3</span><span>Pfsense</span><span>VLANs</span><span>Proxy</span>
+                    </div>
+                </article>
+
+                <article class="project-card coming-soon fade-in delay-2">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">code</span>
+                    </div>
+                    <h4>03. Développement Web Sécurisé full stack</h4>
+                    <p class="description">
+                        Développement Frontend et Backend d'un site évènementiel en se concentrant sur les bonnes
+                        pratiques de codage et la protection contre les vulnérabilités (Sonar, OWASP).
+                    </p>
+                    <div class="tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>OWASP</span><span>SonarQube</span>
+                </article>
+
+                <article class="project-card coming-soon fade-in delay-2">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">code</span>
+                    </div>
+                    <h4>04. Programmation algorithmique sécurisée <span class="status-badge">EN COURS</span></h4>
+                    <p class="description">
+                        Développement d'une application de gestion de produits pour
+                        commerçants avec lecture de fichiers, ajout, tri et recherche. Puis évolution vers une version multi-utilisateurs avec sécurisation des données.
+                    </p>
+                    
+                    <div class="tags">
+                        <span>Python3</span><span>API</span><span>Hashlib</span><span>PyQT</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h3>Me Contacter <span class="accent-line"></span></h3>
+            </div>
+            <p class="contact-intro">
+                Pour toute collaboration, stage ou discussion technique,
+                vous pouvez me joindre directement via mon adresse e-mail ou LinkedIn.
+            </p>
+
+            <div class="contact-methods">
+                <button id="emailCopyButton" class="contact-btn">
+                    <span class="material-symbols-outlined">mail</span>
+                    <span class="btn-text">ugo.castagna19@gmail.com</span>
+                    <span class="copy-status">Copier</span>
+                </button>
+                
+                <a href="https://fr.linkedin.com/in/ugo-castagna-aa29a2386" target="_blank" class="contact-btn">
+                    <span class="material-symbols-outlined">link</span>
+                    <span class="btn-text">Profil LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Conçu et développé par Ugo Castagna &copy; <span id="currentYear">2024</span></p>
+    </footer>
+    
+    <script src="js/js.js"></script>
+</body>
+</html>

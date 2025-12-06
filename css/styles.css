@@ -1,0 +1,560 @@
+:root {
+    --color-dark: #1C1C1C; /* Fond sombre */
+    --color-light: #F9F9F9; /* Texte clair */
+    --color-accent: #0047AB; /* Cobalt Blue (Professionnel) */
+    --color-secondary: #009688; /* Teal pour les tags/status */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------- */
+/* STYLE DE LA JAUGE DE PROGRESSION FIXE                */
+/* ---------------------------------------------------- */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 6px; 
+    background-color: #333; 
+    z-index: 1001; 
+}
+
+.scroll-progress-bar {
+    height: 0; 
+    width: 100%;
+    background-color: var(--color-accent); 
+}
+
+/* --- STYLE DE LA BARRE DE DÉFILEMENT (SCROLLBAR) --- */
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--color-dark);
+}
+
+::-webkit-scrollbar-track {
+    background: #333;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 6px;
+    border: 3px solid var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0064C8; 
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) var(--color-dark);
+}
+
+/* --- Typographie Générale --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+/* --- Barre de Navigation --- */
+.header-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(28, 28, 28, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-light);
+}
+
+.logo-dot {
+    color: var(--color-accent);
+    font-size: 2rem;
+}
+
+.nav-links a {
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* BASE DU SOULIGNEMENT ANIMÉ */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease-out; 
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-accent);
+}
+
+/* EXPANSION DU SOULIGNEMENT AU SURVOL ET À L'ACTIVATION */
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%; 
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-light);
+    cursor: pointer;
+}
+
+/* --- Section Hero (Accueil) --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-light);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.highlight {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* --- Boutons --- */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 2px solid var(--color-accent);
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-accent);
+    box-shadow: 0 0 15px rgba(0, 71, 171, 0.5);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 2px solid var(--color-light);
+    color: var(--color-light);
+    background-color: transparent;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+
+/* --- Sections de Contenu (À Propos, Projets, Contact) --- */
+.content-section {
+    padding: 120px 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-number {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+}
+
+.section-header h3 {
+    font-size: 2.5rem;
+    color: var(--color-light);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.accent-line {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin-left: 20px;
+}
+
+/* --- Section À Propos (Modifiée) --- */
+
+/* Assurer que le texte prend toute la place et est aéré */
+.full-width-bio {
+    max-width: 900px; /* Limiter légèrement pour la lisibilité sur grand écran */
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 20px;
+}
+
+.full-width-bio p {
+    margin-bottom: 25px; /* Plus d'espace entre les paragraphes */
+    font-size: 1.1rem; /* Texte légèrement plus grand */
+    max-width: 100%; 
+    color: #ccc;
+}
+
+.full-width-bio ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+.full-width-bio li {
+    padding-left: 1.5em;
+    position: relative;
+    color: #ccc;
+}
+
+.full-width-bio li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+
+
+/* --- Section Projets --- */
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: #262626;
+    padding: 30px;
+    border-top: 5px solid var(--color-accent);
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.5), 
+        0 0 20px rgba(0, 71, 171, 0.7); 
+}
+
+.project-icon .material-symbols-outlined {
+    font-size: 3rem;
+    color: var(--color-accent);
+    margin-bottom: 15px;
+}
+
+.project-card h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.project-card .description {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+.tags span {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    margin: 0 5px 5px 0;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.coming-soon {
+    border-top-color: #ffc107;
+}
+
+.status-badge {
+    background-color: #ffc107;
+    color: var(--color-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+/* --- Section Contact --- */
+.contact-intro {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-bottom: 50px;
+    color: #ccc;
+}
+
+.contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border: 2px solid var(--color-accent);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.contact-btn .material-symbols-outlined {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.contact-btn:hover {
+    background-color: transparent;
+    color: var(--color-accent);
+    box-shadow: 0 0 15px rgba(0, 71, 171, 0.5);
+}
+
+.copy-status {
+    margin-left: 20px;
+    color: #ffc107;
+    font-size: 0.8rem;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+.copy-status.copied {
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 30px 60px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* --- Animations pour l'apparition --- */
+.fade-in,
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-up {
+    transform: translateY(30px);
+}
+
+.fade-in.visible,
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+
+/* -------------------------------------- */
+/* RESPONSIVE DESIGN (Mobile)             */
+/* -------------------------------------- */
+
+@media (max-width: 1024px) {
+    .header-nav {
+        padding: 20px 40px;
+    }
+    .hero {
+        padding: 100px 40px;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    .content-section {
+        padding: 80px 40px;
+    }
+    /* Les règles profile-grid et photo sont ignorées ici car supprimées du HTML */
+    .full-width-bio {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Cache la jauge de progression sur les petits écrans */
+    .scroll-progress-container {
+        display: none; 
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 67px; 
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        background-color: var(--color-dark);
+        transition: height 0.3s ease-in-out;
+        padding: 0 40px;
+    }
+    .nav-links.open {
+        height: auto;
+        padding: 20px 40px;
+    }
+    .nav-links a {
+        margin: 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-toggle {
+        display: block;
+        font-size: 1.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .section-header h3 {
+        font-size: 2rem;
+    }
+    .accent-line {
+        width: 40px;
+    }
+
+    .contact-methods {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-nav {
+        padding: 15px 20px;
+    }
+    .hero {
+        padding: 80px 20px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero h2 {
+        font-size: 1rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .content-section {
+        padding: 60px 20px;
+    }
+    .full-width-bio p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .project-card {
+        padding: 20px;
+    }
+    .tags span {
+        font-size: 0.7rem;
+    }
+}
+
