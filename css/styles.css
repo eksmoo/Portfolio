@@ -257,48 +257,104 @@ h1, h2, h3, h4 {
     margin-left: 20px;
 }
 
-/* --- Section À Propos (Modifiée) --- */
-
-/* Assurer que le texte prend toute la place et est aéré */
 .full-width-bio {
-    max-width: 900px; /* Limiter légèrement pour la lisibilité sur grand écran */
+    max-width: 950px; /* Légèrement plus large pour aérer */
     margin: 0 auto;
     text-align: left;
-    padding-top: 20px;
+    padding: 40px 0;
+    position: relative;
+}
+
+/* Style des paragraphes principaux */
+.full-width-bio p {
+    margin-bottom: 35px; /* Plus d'espace pour la lisibilité */
+    font-size: 1.2rem; /* Taille plus standard et pro pour de longs textes */
+    font-weight: 300; /* Plus fin, plus élégant */
+    letter-spacing: 0.5px; /* Légère aération des lettres */
+    color: #b0b0b0; /* Gris plus doux pour le confort visuel */
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+    padding-left: 0;
+}
+
+
+/* Style de la liste de compétences */
+.full-width-bio ul {
+    list-style: none;
+    padding: 30px;
+    margin: 40px 0;
+    background: rgba(0, 0, 0, 0.2); /* Fond très légèrement plus sombre */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Bordure presque invisible */
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de "Scan" lumineux en fond de liste au survol */
+.full-width-bio ul::after {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 71, 171, 0.1) 0%, rgba(0,0,0,0) 70%);
+    transition: all 0.6s ease-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.full-width-bio ul:hover::after {
+    top: -100%;
+    left: -100%;
+}
+
+/* Style des éléments de liste */
+.full-width-bio li {
+    font-size: 1.1rem;
+    font-family: var(--font-body); /* Retour à la police body pour le pro */
+    color: #ccc;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    z-index: 1; /* Passe au-dessus de l'effet de fond */
+    transition: all 0.3s ease;
+}
+
+/* Remplacement de la puce › par un icône Material plus Cyber */
+.full-width-bio li::before {
+    content: 'stat_0'; /* Code pour l'icône de niveau/point */
+    font-family: 'Material Symbols Outlined';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--color-secondary); /* Ton Teal */
+    font-size: 1.2rem;
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+
+/* Interaction au survol des éléments de liste */
+.full-width-bio li:hover {
+    color: var(--color-light);
+    transform: translateX(5px);
+}
+
+.full-width-bio li:hover::before {
+    color: var(--color-accent); /* Change en bleu cobalt au survol */
+    content: 'token'; /* Icône plus "Tech" au survol */
+    text-shadow: 0 0 5px var(--color-accent);
 }
 
 .text-cobalt {
-    /* Le code hexadécimal #0047AB est une nuance classique de bleu cobalt */
-    color: #0047AB;
-}
-.full-width-bio p {
-    margin-bottom: 25px; /* Plus d'espace entre les paragraphes */
-    font-size: 1.8rem; /* Texte légèrement plus grand */
-    max-width: 100%; 
-    color: #ccc;
+    color: var(--color-accent);
+    font-weight: 500;
 }
 
-.full-width-bio ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-    max-width: 700px;
+.text-red {
+    color: #ff4d4d; /* Rouge un peu plus "Cyber" */
+    font-weight: 500;
 }
-
-.full-width-bio li {
-    padding-left: 1.5em;
-    position: relative;
-    color: #ccc;
-}
-
-.full-width-bio li::before {
-    content: '›';
-    position: absolute;
-    left: 0;
-    color: var(--color-secondary);
-    font-weight: 700;
-}
-
 
 
 /* --- Section Projets --- */
@@ -357,6 +413,13 @@ h1, h2, h3, h4 {
     border-top-color: #ffc107;
 }
 
+.ouais {
+    border-top-color: #ce4404;
+}
+
+.ouais2 {
+    border-top-color: #009688;
+}
 .status-badge {
     background-color: #ffc107;
     color: var(--color-dark);
@@ -567,7 +630,7 @@ footer p {
         padding: 60px 20px;
     }
     .full-width-bio p {
-        font-size: 1rem;
+        font-size: 1rem; /* Au lieu de 1.8rem, trop gros sur mobile */
         margin-bottom: 20px;
     }
     .project-card {
@@ -578,3 +641,16 @@ footer p {
     }
 }
 
+/* ── SCROLL PROGRESS ── */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%; /* Initialisé à 0 */
+  z-index: 9999; /* Très élevé pour passer devant la nav */
+  background: linear-gradient(90deg, #0047ab, #00d4ff); 
+  box-shadow: 0 0 10px rgba(0, 71, 171, 0.7);
+  transition: width 0.1s linear;
+  pointer-events: none; /* Pour ne pas gêner les clics sur les liens de la nav */
+}

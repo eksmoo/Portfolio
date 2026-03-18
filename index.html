@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
 </head>
 <body>
-
+    <div id="progress-bar"></div>
     <nav class="header-nav">
         <div class="logo">UGO CASTAGNA<span class="logo-dot">.</span></div>
         <div class="nav-links">
@@ -22,6 +22,7 @@
         <button class="nav-toggle" aria-label="Toggle navigation menu">
             <span class="material-symbols-outlined">menu</span>
         </button>
+</div>
     </nav>
 
     <main>
@@ -46,9 +47,12 @@
                 </p>
                 <p>
                     Actuellement, j'ai pu développer des compétences pratiques dans plusieurs domaines clés de la cybersécurité, notamment :
-                    <ul style="font-size: 1.2em;" class="neon-cobalt">
-                        <li>ISR (Firewalling, Segmentation)</li><br>
-                        <li>Développement sécurisé (Protection contre les vulnérabilités OWASP)</li>
+                    <ul style="font-size: 1.8rem;">
+                        <li><strong class="text-red">ISR (Firewalling, Segmentation)</strong></li>
+                        <li><strong class="text-red">Développement sécurisé (Protection contre les vulnérabilités OWASP)</strong></li>
+                        <li><strong class="text-red">Programmation algorithmique sécurisée (Hashing, API sécurisées)</strong></li>
+                        <li><strong class="text-red">Techniques de base de pentesting et de traitement de l'information</strong></li>
+                        <li><strong class="text-red">Réflexes de base de gestion de crise cyber</strong></li>
                     </ul>
                 </p>
                 <p>
@@ -120,7 +124,40 @@
                         <span>Python3</span><span>API</span><span>Hashlib</span><span>PyQT</span>
                     </div>
                 </article>
+
+                <article class="project-card ouais fade-in delay-2">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">code</span>
+                    </div>
+                    <h4>05. Techniques de base de pentesting / OSINT </h4>
+                    <p class="description">
+                        Analyse de la surface d'attaque d'une application web : de l'interception de requêtes <strong>HTTP</strong> à l'exploitation de failles logiques. 
+        Test en VM de la robustesse des sessions, des cookies et des mécanismes d'authentification. Recherche d'informations sur les cibles via des outils d'OSINT pour identifier des points faibles exploitables.
+                    </p>
+                    
+                    <div class="tags">
+                        <span>KALI Linux</span><span>Metasploit</span><span>Hashlib</span><span>Nmap</span>
+                    </div>
+                </article>
+
+                <article class="project-card ouais2 fade-in delay-2">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">code</span>
+                    </div>
+                    <h4>06. Exercice de gestion de crise </h4>
+                    <p class="description">
+                        Simulation d'une attaque de ransomware sur une infrastructure virtuelle. 
+                        Identification rapide de l'incident, analyse de l'impact et mise en œuvre de mesures de confinement pour limiter la propagation. 
+                        Coordination avec les équipes techniques pour trouver des solutions et renforcer les défenses contre les attaques futures.
+                    
+                    <div class="tags">
+                        <span>KALI Linux</span><span>Metasploit</span><span>Hashlib</span><span>Nmap</span>
+                    </div>
+                </article>
             </div>
+
+
+            
         </section>
 
         <section id="contact" class="content-section">
